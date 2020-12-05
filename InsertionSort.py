@@ -1,3 +1,20 @@
+arr = []
+inputComp = False
+while inputComp==False:
+    try:
+        x = int(input("Please enter a number to be sorted:"))
+        arr.append(x)
+        checker = input('Are you done? y/n')
+        if checker=="y":
+            inputComp = True
+    except ValueError:
+        print("not a number ,try again:")
+        continue
+print("To be sorted:")
+for i in range(len(arr)): 
+    print ("% d" % arr[i],end=" ") 
+
+print("\nSorting:")
 # Function to do insertion sort 
 def insertionSort(arr): 
   
@@ -14,14 +31,14 @@ def insertionSort(arr):
                 arr[j + 1] = arr[j] 
                 j -= 1
         arr[j + 1] = key 
+        
         for i in range(len(arr)): 
             print ("% d" % arr[i],end=" ") 
-        print('/n')
+        print('')
   
-  
-# Driver code to test above 
-arr = [2,8,4,10,1,3,5] 
-insertionSort(arr) 
+insertionSort(arr)
+# Driver code to test above  
+print("Sorted list:")
 for i in range(len(arr)): 
     print ("% d" % arr[i],end=" ") 
   
