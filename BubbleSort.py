@@ -1,5 +1,21 @@
 # Python program for implementation of Bubble Sort 
-  
+arr = []
+inputComp = False
+while inputComp==False:
+    try:
+        x = int(input("Please enter a number to be sorted:"))
+        arr.append(x)
+        checker = input('Are you done? y/n')
+        if checker=="y":
+            inputComp = True
+    except ValueError:
+        print("not a number ,try again:")
+        continue
+print("To be sorted:")
+for i in range(len(arr)): 
+    print ("%d" %arr[i],end=" ") 
+
+print("\nSorting:")
 def bubbleSort(arr): 
     n = len(arr) 
   
@@ -18,9 +34,7 @@ def bubbleSort(arr):
             print ("%d" %arr[i],end=" ")
         print("")
   
-# Driver code to test above 
-arr = [64, 34, 25, 12, 22, 11, 90] 
-  
+# Driver code to test above   
 bubbleSort(arr) 
   
 print ("Sorted array is:") 
